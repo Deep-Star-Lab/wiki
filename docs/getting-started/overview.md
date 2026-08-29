@@ -9,7 +9,7 @@ Bu sayfa, Deep Star Lab topluluğuna yeni katılanlar için temel adımlarını 
 - Temel komut satırı bilgisi
 - Huggingface hesabı
 
-## Wiki'ye Katkıdq Bulunma
+## Wiki'ye Katkıda Bulunma
 
 ```bash
 # Example: clone the repository and install dependencies
@@ -21,6 +21,6 @@ pip install mkdocs mkdocs-material
 mkdocs serve
 ```
 
-## Temel Projelee Geliştirme
+## Temel Projeler Geliştirme
 
 **Yakında**
