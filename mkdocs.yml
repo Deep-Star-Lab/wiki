@@ -1,0 +1,116 @@
+site_name: Deep Star Lab
+site_description: Deep Star Lab — Üretim odaklı AI topluluğu wiki'si
+site_url: https://Deep-Star-Lab.github.io/wiki
+repo_url: https://github.com/Deep-Star-Lab/wiki
+repo_name: Deep-Star-Lab/wiki
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: tr
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Aydınlık moda geç
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Karanlık moda geç
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+# --- Çok dilli yapı (TR varsayılan, EN alternatif) ---
+# Dosya isimlendirme: sayfa.md -> Türkçe, sayfa.en.md -> İngilizce
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: tr
+          name: Türkçe
+          build: true
+          default: true
+        - locale: en
+          name: English
+          build: true
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Deep-Star-Lab/wiki
+    - icon: fontawesome/brands/discord
+      link: https://github.com/Deep-Star-Lab/wiki
+  alternate:
+    - name: Türkçe
+      link: /
+      lang: tr
+    - name: English
+      link: /en/
+      lang: en
+
+nav:
+  - Ana Sayfa: index.md
+  - Başlarken:
+      - Kuruluma Genel Bakış: getting-started/overview.md
+      - Katkı Rehberi: getting-started/contributing.md
+  - Projeler:
+      - Genel Bakış: projects/index.md
+  - Kaynaklar:
+      - Öğrenme Kaynakları: resources/learning.md
+  - SSS: faq.md

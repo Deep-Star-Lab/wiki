@@ -1,0 +1,1 @@
+orjinal wiki
