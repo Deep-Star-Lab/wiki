@@ -1,0 +1,119 @@
+/* ==========================================================
+   Deep Star Lab — Özel Renk Paleti
+   Arka plan: #000000 (siyah)
+   Yazı/Temel: #FFFFFF (beyaz)
+   Primary/Vurgu: #2A6EF2
+   theme.palette içinde primary: custom / accent: custom
+   seçildiği için Material bu değişkenleri
+   [data-md-color-primary="custom"] altında arar.
+   ========================================================== */
+
+:root {
+  --dsl-accent: #2A6EF2;
+  --dsl-accent-hover: #4d84f5;
+  --dsl-bg: #000000;
+  --dsl-bg-alt: #0b0b0b;
+  --dsl-fg: #ffffff;
+}
+
+/* ---- Karanlık şema (slate) — birincil görünüm ---- */
+[data-md-color-scheme="slate"] {
+  --md-hue: 0;
+
+  /* Genel arka plan / yazı */
+  --md-default-bg-color: var(--dsl-bg);
+  --md-default-bg-color--light: var(--dsl-bg-alt);
+  --md-default-bg-color--lighter: var(--dsl-bg-alt);
+  --md-default-bg-color--lightest: #161616;
+  --md-default-fg-color: var(--dsl-fg);
+  --md-default-fg-color--light: rgba(255, 255, 255, 0.8);
+  --md-default-fg-color--lighter: rgba(255, 255, 255, 0.6);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.3);
+
+  /* Kod blokları */
+  --md-code-bg-color: #0d0d0d;
+  --md-code-fg-color: #e6e6e6;
+
+  /* Üstbilgi ve gezinme çubuğu */
+  --md-footer-bg-color: #000000;
+  --md-footer-bg-color--dark: #000000;
+}
+
+/* ---- Primary (üst bar, kenarlık, ikonlar) ---- */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--dsl-bg);
+  --md-primary-fg-color--light: var(--dsl-bg);
+  --md-primary-fg-color--dark: var(--dsl-bg);
+  --md-primary-bg-color: var(--dsl-fg);
+  --md-primary-bg-color--light: var(--dsl-fg);
+}
+
+/* ---- Accent (linkler, vurgular, buton hover) ---- */
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--dsl-accent);
+  --md-accent-fg-color--transparent: rgba(42, 110, 242, 0.1);
+  --md-accent-bg-color: var(--dsl-fg);
+  --md-accent-bg-color--light: var(--dsl-fg);
+}
+
+/* ---- Aydınlık şema (toggle için) — yine de yüksek kontrast ---- */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #000000;
+}
+[data-md-color-scheme="default"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #000000;
+  --md-primary-bg-color: #ffffff;
+}
+[data-md-color-scheme="default"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--dsl-accent);
+}
+
+/* ---- İnce dokunuşlar ---- */
+.md-header {
+  border-bottom: 1px solid rgba(42, 110, 242, 0.25);
+  box-shadow: none;
+}
+
+.md-tabs {
+  background-color: var(--dsl-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-nav__link--active,
+.md-nav__link:focus,
+.md-nav__link:hover {
+  color: var(--dsl-accent) !important;
+}
+
+a,
+.md-content a {
+  color: var(--dsl-accent);
+}
+a:hover {
+  color: var(--dsl-accent-hover);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-color: var(--dsl-accent);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: rgba(42, 110, 242, 0.12);
+}
+
+.md-search__form {
+  background-color: var(--dsl-bg-alt);
+}
+
+.md-button--primary {
+  background-color: var(--dsl-accent);
+  border-color: var(--dsl-accent);
+  color: #ffffff;
+}
+.md-button--primary:hover {
+  background-color: var(--dsl-accent-hover);
+  border-color: var(--dsl-accent-hover);
+}
