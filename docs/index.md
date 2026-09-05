@@ -22,6 +22,7 @@ Burada model karşılaştırmasından çok işin matematiği ve yazılım kısm�
 2. [Katkı Rehberi](getting-started/contributing.md)'ni incele.
 3. [Projeler](projects/index.md) sayfasından mevcut çalışmalara göz at.
 
+
 ---
 
 
