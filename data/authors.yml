@@ -1,0 +1,31 @@
+
+# --- Deep Star Lab ---
+berkan-dogan:
+  name: Berkan Doğan
+  # github: <kullanıcı-adı>
+
+yagmur: 
+  name: Yağmur Şimşek
+enes-taha-kocyigit:
+  name: Enes Taha Koçyiğit
+  # github: <kullanıcı-adı>
+
+# --- Dış kaynak yazarları---
+mohamed-mekkouri:
+  name: Mohamed Mekkouri
+  hf: medmekk
+marc-sun:
+  name: Marc Sun
+  hf: marcsun13
+leandro-von-werra:
+  name: Leandro von Werra
+  hf: lvwerra
+pedro-cuenca:
+  name: Pedro Cuenca
+  hf: pcuenq
+omar-sanseviero:
+  name: Omar Sanseviero
+  hf: osanseviero
+thomas-wolf:
+  name: Thomas Wolf
+  hf: thomwolf

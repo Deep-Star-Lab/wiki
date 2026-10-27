@@ -32,8 +32,6 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
-    - navigation.instant
-    - navigation.instant.progress
     - navigation.tracking
     - navigation.indexes
     - search.suggest
@@ -45,6 +43,10 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+# Yazar standardı + liderlik tablosu (data/ klasöründen beslenir)
+hooks:
+  - hooks/dsl.py
 
 # --- Çok dilli yapı (TR varsayılan, EN alternatif) ---
 # Dosya isimlendirme: sayfa.md -> Türkçe, sayfa.en.md -> İngilizce
@@ -64,6 +66,40 @@ plugins:
         - locale: en
           name: English
           build: true
+          site_description: Deep Star Lab Wiki
+          nav_translations:
+            Ana Sayfa: Home
+            Başlarken: Getting Started
+            Kuruluma Genel Bakış: Setup Overview
+            Katkı Rehberi: Contributing Guide
+            Projeler: Projects
+            Genel Bakış: Overview
+            Kaynaklar: Resources
+            Öğrenme Kaynakları: Learning Resources
+            Bitnet Transform Türkçe Rehber: BitNet 1.58-bit Fine-tuning (Turkish translation)
+            Türkçe Morfolojik Tokenizer: Turkish Morphological Tokenizer
+            Ternary Backward Mekanizması: Ternary Backward Mechanism
+            Talimat Veri Seti: Instruction Dataset
+            Depolar: Repositories
+            Sözlük: Glossary
+            Topluluk: Community
+            Kurallar: Rules
+            Liderlik Tablosu: Leaderboard
+            SSS: FAQ
+          theme:
+            palette:
+              - scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-night
+                  name: Switch to light mode
+              - scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-sunny
+                  name: Switch to dark mode
 
 markdown_extensions:
   - toc:
@@ -96,13 +132,6 @@ extra:
       link: https://github.com/Deep-Star-Lab/wiki
     - icon: fontawesome/brands/discord
       link: https://github.com/Deep-Star-Lab/wiki
-  alternate:
-    - name: Türkçe
-      link: /
-      lang: tr
-    - name: English
-      link: /en/
-      lang: en
 
 nav:
   - Ana Sayfa: index.md
@@ -111,7 +140,15 @@ nav:
       - Katkı Rehberi: getting-started/contributing.md
   - Projeler:
       - Genel Bakış: projects/index.md
+      - Türkçe Morfolojik Tokenizer: projects/turkish-tokenizer.md
+      - Ternary Backward Mekanizması: projects/ternary-backward.md
+      - Talimat Veri Seti: projects/instruction-dataset.md
+  - Depolar: repos.md
   - Kaynaklar:
       - Öğrenme Kaynakları: resources/learning.md
-      - Bitnet Transform Türkçe Rehber : resources/q.md
+      - Sözlük: resources/glossary.md
+      - Bitnet Transform Türkçe Rehber: resources/q.md
+  - Topluluk:
+      - Kurallar: rules.md
+      - Liderlik Tablosu: leaderboard.md
   - SSS: faq.md

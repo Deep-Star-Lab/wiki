@@ -1,0 +1,152 @@
+# Deep Star Lab sözlüğü — çevirilerde TERİM TUTARLILIĞI için tek kaynak.
+# Bir terimi çevirirken önce buraya bakın; yoksa buraya ekleyin.
+#
+#   id   : küçük harf, ASCII, tire ile (sayfa içi bağlantı: #id)
+#   tr   : Türkçe karşılık (wiki'de tercih edilen)
+#   en   : İngilizce terim
+#   def  : {tr, en} kısa tanım (1–3 cümle)
+#   see  : (opsiyonel) ilişkili terim id'leri
+#
+# Karşılıklar, resources/q.md çevirisinde kullanılan tercihlerle uyumludur.
+- id: quantization
+  tr: Kuantizasyon
+  en: Quantization
+  def:
+    tr: Model parametrelerinin (bazen aktivasyonların) hassasiyetini FP16/FP32 gibi yüksek bit formatlarından 8 ya da 4 bit gibi daha düşük formatlara indirme işlemi. Bellek ve hesaplama maliyetini azaltır, ancak çoğunlukla doğruluk kaybına yol açar.
+    en: Reducing the precision of model parameters (and sometimes activations) from high-bit formats such as FP16/FP32 to lower ones such as 8 or 4 bits. It cuts memory and compute cost but often costs accuracy.
+  see: [ternary, absmax, bitnet]
+- id: ternary
+  tr: Üçlü (ternary) ağırlık
+  en: Ternary weights
+  def:
+    tr: Her ağırlığın yalnızca -1, 0 ve 1 değerlerinden birini aldığı gösterim. Üç değer parametre başına log₂(3) ≈ 1,58 bit bilgiye karşılık gelir.
+    en: A representation in which every weight takes only one of -1, 0 or 1. Three values correspond to log₂(3) ≈ 1.58 bits per parameter.
+  see: [bitnet, bitlinear, ste]
+- id: bitnet
+  tr: BitNet
+  en: BitNet
+  def:
+    tr: Microsoft Research tarafından önerilen, doğrusal katmanları düşük bitli BitLinear katmanlarıyla değiştiren transformatör mimarisi. b1.58 sürümü üçlü ağırlık kullanır.
+    en: A transformer architecture proposed by Microsoft Research that replaces linear layers with low-bit BitLinear layers. The b1.58 variant uses ternary weights.
+  see: [bitlinear, ternary]
+- id: bitlinear
+  tr: BitLinear
+  en: BitLinear
+  def:
+    tr: BitNet'te standart Linear katmanın yerini alan; ağırlıkları üçlü, aktivasyonları 8 bit hassasiyete kuantize eden katman.
+    en: The layer that replaces a standard Linear layer in BitNet; it quantizes weights to ternary values and activations to 8 bits.
+  see: [bitnet, absmax]
+- id: ste
+  tr: Düz Geçiş Tahmincisi (STE)
+  en: Straight-Through Estimator (STE)
+  def:
+    tr: Türevlenemeyen yuvarlama işleminden gradyanın geçebilmesi için yuvarlamanın gradyanını 1 kabul eden yöntem; yani yuvarlama hiç yapılmamış gibi davranılır.
+    en: A method that lets gradients pass through a non-differentiable rounding step by treating its gradient as 1, as if the rounding had not happened.
+  see: [gradient, backward, ternary]
+- id: absmax
+  tr: Absmax kuantizasyonu
+  en: Absmax quantization
+  def:
+    tr: Değerlerin, mutlak değerce en büyük elemana göre ölçeklenerek hedef aralığa (ör. 8 bit için [-128, 127]) sığdırıldığı kuantizasyon yöntemi.
+    en: A quantization method that scales values by the element with the largest magnitude to fit the target range (e.g. [-128, 127] for 8 bits).
+  see: [quantization]
+- id: perplexity
+  tr: Şaşkınlık (perplexity)
+  en: Perplexity
+  def:
+    tr: Bir dil modelinin metni ne kadar iyi tahmin ettiğini ölçen metrik. Düşük değer daha iyidir.
+    en: A metric of how well a language model predicts text. Lower is better.
+- id: fine-tuning
+  tr: İnce ayar
+  en: Fine-tuning
+  def:
+    tr: Önceden eğitilmiş bir modelin, daha küçük ve göreve özgü bir veri üzerinde eğitime devam ettirilmesi.
+    en: Continuing to train a pre-trained model on a smaller, task-specific dataset.
+  see: [pretraining, instruction-tuning]
+- id: pretraining
+  tr: Ön eğitim
+  en: Pre-training
+  def:
+    tr: Bir modelin büyük ve genel bir veri üzerinde sıfırdan eğitildiği ilk aşama.
+    en: The first stage, in which a model is trained from scratch on large, general data.
+  see: [fine-tuning]
+- id: instruction-tuning
+  tr: Talimat eğitimi
+  en: Instruction tuning
+  def:
+    tr: Modeli, verilen talimatları izleyecek şekilde (talimat–yanıt çiftleri üzerinde) ince ayarlama.
+    en: Fine-tuning a model on instruction–response pairs so that it follows given instructions.
+  see: [fine-tuning, dataset]
+- id: dataset
+  tr: Veri seti
+  en: Dataset
+  def:
+    tr: Eğitim ya da değerlendirme için derlenmiş örnekler topluluğu.
+    en: A collection of examples compiled for training or evaluation.
+- id: tokenizer
+  tr: Tokenizer
+  en: Tokenizer
+  def:
+    tr: Metni, modelin işleyebileceği birimlere (token) bölen ve bunları sayılara eşleyen bileşen. Dil modelinin ilk katmanına girdiyi hazırlar.
+    en: The component that splits text into units (tokens) the model can process and maps them to numbers. It prepares the input for the model's first layer.
+  see: [morphology, agglutinative]
+- id: morphology
+  tr: Morfoloji
+  en: Morphology
+  def:
+    tr: Sözcüklerin iç yapısını (kök, ek) inceleyen dilbilim dalı.
+    en: The branch of linguistics that studies the internal structure of words (roots and affixes).
+  see: [agglutinative, tokenizer]
+- id: agglutinative
+  tr: Eklemeli dil
+  en: Agglutinative language
+  def:
+    tr: Anlam ve görev, köke art arda eklenen eklerle kurulan dil türü. Türkçe buna örnektir; bu yüzden tek bir sözcük çok sayıda token'a bölünebilir.
+    en: A kind of language where meaning and function are built by chaining affixes onto a root. Turkish is an example, so a single word can split into many tokens.
+  see: [morphology, tokenizer]
+- id: gradient
+  tr: Gradyan
+  en: Gradient
+  def:
+    tr: Kaybın model parametrelerine göre türevi; parametrelerin hangi yönde güncelleneceğini belirler.
+    en: The derivative of the loss with respect to the model parameters; it determines which direction parameters are updated.
+  see: [backward, ste]
+- id: backward
+  tr: Geri yayılım (backward)
+  en: Backward pass
+  def:
+    tr: Kaybın gradyanlarının çıkıştan girişe doğru hesaplandığı adım.
+    en: The step in which gradients of the loss are computed from output back to input.
+  see: [gradient, ste]
+- id: activation
+  tr: Aktivasyon
+  en: Activation
+  def:
+    tr: Bir katmanın çıktısı; sonraki katmana girdi olarak giden ara değerler.
+    en: The output of a layer; the intermediate values fed to the next layer.
+- id: inference
+  tr: Çıkarım
+  en: Inference
+  def:
+    tr: Eğitilmiş modelin yeni girdiler üzerinde tahmin ürettiği aşama.
+    en: The stage in which a trained model produces predictions on new inputs.
+- id: kernel
+  tr: Çekirdek (kernel)
+  en: Kernel
+  def:
+    tr: GPU üzerinde çalışan, genellikle matris çarpımı gibi tek bir işlemi paralel yürüten küçük program.
+    en: A small program that runs on a GPU, typically executing one operation such as matrix multiplication in parallel.
+  see: [tiling]
+- id: tiling
+  tr: Döşeme (tiling)
+  en: Tiling
+  def:
+    tr: Büyük bir matris çarpımını, paylaşılan belleğe sığacak küçük bloklara bölerek yapma tekniği.
+    en: A technique that splits a large matrix multiplication into small blocks that fit in shared memory.
+  see: [kernel]
+- id: llm
+  tr: Büyük dil modeli (LLM)
+  en: Large language model (LLM)
+  def:
+    tr: Çok sayıda parametreye sahip, büyük metin verisiyle eğitilmiş dil modeli.
+    en: A language model with a very large number of parameters, trained on large text data.

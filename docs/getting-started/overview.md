@@ -13,10 +13,10 @@ Bu sayfa, Deep Star Lab topluluğuna yeni katılanlar için temel adımlarını 
 
 ```bash
 # Example: clone the repository and install dependencies
-git clone https://github.com/DeepStarLab/wiki.git
+git clone https://github.com/Deep-Star-Lab/wiki.git
 cd wiki
-# Install MkDocs and Material theme
-pip install mkdocs mkdocs-material
+# Gerekli paketleri kur
+pip install -r requirements.txt
 # Build the site locally
 mkdocs serve
 ```

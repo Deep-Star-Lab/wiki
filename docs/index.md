@@ -16,6 +16,14 @@ Burada model karşılaştırmasından çok işin matematiği ve yazılım kısm�
 - **Bağımsız** - tek bir merkezi yapıya,devlete ve şirkete bağımlı değiliz, sadece yapay zeka değil genel internetin sansürsüzlüğü ve erişilebilirliği içinde çalışırız.
 - **Tecrübe** - ana çekirdek kadro basit sinir ağlarından,üretken modellerin temellerine kadar görmüş ve o dönemlerde çalışmalar yapmıştır
 
+## Liderlik Tablosu
+
+Araştırmacılarımızın katkıları şeffaf bir defterde tutulur; puanlar herkesin görebildiği kurallara göre hesaplanır.
+
+<!-- dsl:leaderboard top=5 -->
+
+[Tüm liste, puan kuralları ve nasıl katkı eklenir →](leaderboard.md)
+
 ## Hızlı Başlangıç
 
 1. [Kuruluma Genel Bakış](getting-started/overview.md) sayfasını oku.

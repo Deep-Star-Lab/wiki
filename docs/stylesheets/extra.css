@@ -117,3 +117,107 @@ a:hover {
   background-color: var(--dsl-accent-hover);
   border-color: var(--dsl-accent-hover);
 }
+
+
+/* ==========================================================
+   Yazar künyesi (hooks/dsl.py)
+   ========================================================== */
+.dsl-byline {
+  margin: 0 0 1.5em;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--dsl-accent);
+  background: rgba(42, 110, 242, 0.06);
+  font-size: 0.8rem;
+}
+.dsl-byline p { margin: 0.25em 0; }
+.dsl-byline__meta { opacity: 0.7; }
+
+/* ==========================================================
+   Liderlik tablosu (hooks/dsl.py)
+   ========================================================== */
+.dsl-lb { overflow-x: auto; }
+.md-typeset .dsl-lb .md-typeset__table { display: block; padding: 0; }
+.md-typeset .dsl-lb table:not([class]) { display: table; width: 100%; }
+.md-typeset .dsl-lb th,
+.md-typeset .dsl-lb td { vertical-align: middle; }
+.md-typeset .dsl-lb table:not([class]) th.dsl-lb__num,
+.md-typeset .dsl-lb table:not([class]) td.dsl-lb__num { text-align: right; white-space: nowrap; }
+.dsl-lb__rank { width: 2.2em; font-weight: 700; opacity: 0.7; }
+.dsl-lb__who { white-space: nowrap; }
+.dsl-lb__who > * { vertical-align: middle; }
+.dsl-lb__avatar {
+  display: inline-block;
+  width: 28px; height: 28px;
+  margin-right: 0.6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.dsl-lb__avatar--initial {
+  line-height: 28px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(42, 110, 242, 0.18);
+  color: var(--dsl-accent);
+}
+.dsl-lb__chip {
+  display: inline-block;
+  margin: 0 0.3em 0.2em 0;
+  padding: 0 0.6em;
+  border-radius: 1em;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  background: rgba(42, 110, 242, 0.12);
+}
+.dsl-lb__row--r1 .dsl-lb__rank { color: #e6b422; opacity: 1; }
+.dsl-lb__row--r2 .dsl-lb__rank { color: #b8c0cc; opacity: 1; }
+.dsl-lb__row--r3 .dsl-lb__rank { color: #cd7f32; opacity: 1; }
+.dsl-lb__empty { opacity: 0.7; font-style: italic; }
+
+
+/* ==========================================================
+   Proje durumu, okuma seviyesi (hooks/dsl.py)
+   ========================================================== */
+.dsl-status {
+  display: inline-block;
+  padding: 0 0.7em;
+  border-radius: 1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(139, 148, 158, 0.2);
+}
+.dsl-status--active  { background: rgba(46, 160, 67, 0.2);  color: #3fb950; }
+.dsl-status--planned { background: rgba(42, 110, 242, 0.2); color: var(--dsl-accent); }
+.dsl-status--paused  { background: rgba(210, 153, 34, 0.2); color: #d29922; }
+.dsl-status--done    { background: rgba(163, 113, 247, 0.2); color: #a371f7; }
+.dsl-level--beginner     { background: rgba(46, 160, 67, 0.18); }
+.dsl-level--intermediate { background: rgba(210, 153, 34, 0.18); }
+.dsl-level--advanced     { background: rgba(248, 81, 73, 0.18); }
+
+/* ==========================================================
+   GitHub depo vitrini (hooks/dsl.py → data/repos.json)
+   ========================================================== */
+.dsl-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin: 1em 0;
+}
+.dsl-repo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(139, 148, 158, 0.3);
+  border-radius: 0.4rem;
+}
+.dsl-repo:hover { border-color: var(--dsl-accent); }
+.md-typeset .dsl-repo h3 { margin: 0 0 0.3em; font-size: 0.9rem; }
+.dsl-repo p { flex: 1; margin: 0 0 0.6em; font-size: 0.75rem; opacity: 0.85; }
+.dsl-repo__topics { margin-bottom: 0.5em; }
+.dsl-repo__meta { display: flex; flex-wrap: wrap; gap: 0.3em 1em; font-size: 0.7rem; opacity: 0.8; }
+.dsl-repo__lang i {
+  display: inline-block;
+  width: 0.7em; height: 0.7em;
+  margin-right: 0.4em;
+  border-radius: 50%;
+}

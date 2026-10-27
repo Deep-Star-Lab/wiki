@@ -1,0 +1,25 @@
+# Liderlik tablosu — katkı defteri
+# ------------------------------------------------------------------
+# Her katkı BİR giriştir. Giriş eklemek = bir PR açmak; PR'ı inceleyen kişi
+# kanıtı (url) kontrol edip birleştirirse katkı "doğrulanmış" sayılır.
+#
+#   people : [kişi id'leri]  (data/authors.yml içindeki id'ler)
+#   type   : data/scoring.yml içindeki bir tür
+#   title  : kısa açıklama
+#   date   : YYYY-MM-DD (gelecek tarihli girişler sayılmaz)
+#   url    : kanıt (PR, sayfa, repo, makale ...)
+#   weight : (opsiyonel, varsayılan 1.0) inceleyenin verdiği kalite çarpanı, 0.5–2.0
+#
+# Birden fazla kişi varsa puan eşit bölünür.
+# Aşağıdaki GitHub kaynaklı girişler `scripts/github_ingest.py` ile eklenebilir.
+# ------------------------------------------------------------------
+- people: [berkan-dogan, enes-taha-kocyigit]
+  type: translation
+  title: "BitNet 1.58-bit İnce Ayar makalesinin Türkçe çevirisi"
+  date: 2026-06-01
+  url: https://huggingface.co/blog/1_58_llm_extreme_quantization
+- people: [yagmur]
+  type: project
+  title: "Tokenizer Denemeleri Ana Yürütücÿ"
+  date: 2026-10-25
+  url: placeholder

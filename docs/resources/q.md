@@ -1,24 +1,18 @@
 ---
 title: "Fine-tuning LLMs to 1.58bit: extreme quantization made easy"
-thumbnail: /blog/assets/1_58_llm_extreme_quantization/thumbnail.png
 authors:
-  - user: medmekk
-  - user: marcsun13
-  - user: lvwerra
-  - user: pcuenq
-  - user: osanseviero
-  - user: thomwolf
-translated_by: Berkan Doğan / Enes Taha Koçyiğit
+  - mohamed-mekkouri
+  - marc-sun
+  - leandro-von-werra
+  - pedro-cuenca
+  - omar-sanseviero
+  - thomas-wolf
+translators:
+  - berkan-dogan
+  - enes-taha-kocyigit
 date_translated: 2026-06-01
 original_url: https://huggingface.co/blog/1_58_llm_extreme_quantization
 ---
-
-# ATIF
-Orjinalinden Çevrildi
-[**Orjinal Paper** ](https://huggingface.co/blog/1_58_llm_extreme_quantization)
----
-**Çevirmenler** Enes Taha Koçyiğit 
-
 
 # LLM'leri 1.58 Bite İnce Ayar Yapmak: Kuantizasyon Artık Aşırı Kolay
 

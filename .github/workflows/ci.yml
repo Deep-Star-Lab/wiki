@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # "Bu ay" / "Son 90 gün" liderlik sekmelerinin ay dönümünde güncellenmesi için günlük derleme
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,9 +25,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+          cache: pip
 
       - run: pip install -r requirements.txt
-      - run: mkdocs build
+      # Organizasyon depolarını çek (hata olursa derleme yine de devam eder)
+      - run: python scripts/fetch_repos.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - run: python tests/test_dsl.py
+      - run: python tests/test_content.py
+      - run: mkdocs build --strict
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

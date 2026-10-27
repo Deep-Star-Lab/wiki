@@ -1,0 +1,8 @@
+# GitHub depo vitrini ayarları — hem scripts/fetch_repos.py hem hooks/dsl.py okur.
+org: Deep-Star-Lab
+include_forks: false      # fork'lanmış depolar vitrinde görünsün mü?
+include_archived: false   # arşivlenmiş depolar görünsün mü?
+exclude:                  # vitrine girmeyecek depolar
+  - .github
+  - .github-private
+pinned: []                # önce gösterilecek depolar (sırasıyla), ör. [turkish-tokenizer]

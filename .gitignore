@@ -1,0 +1,6 @@
+site/
+__pycache__/
+*.pyc
+.cache/
+# CI her derlemede GitHub'dan çeker
+data/repos.json

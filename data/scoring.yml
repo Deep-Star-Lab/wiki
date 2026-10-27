@@ -1,0 +1,49 @@
+# Liderlik tablosu puanlama kuralları (TEK KAYNAK)
+# Bu dosya hem hesaplamada hem de sitedeki "Nasıl puan toplanır?" tablosunda kullanılır.
+#
+#   points      : bir katkı için temel puan (birden fazla kişi varsa eşit bölünür)
+#   monthly_cap : (opsiyonel) bir kişinin o tür için ayda alabileceği en fazla puan
+#   label       : tabloda görünen ad
+#   about       : ne zaman bu türün seçilmesi gerektiği
+types:
+  paper:
+    points: 100
+    label: {tr: Makale, en: Paper}
+    about: {tr: "Özgün araştırma / preprint yayını", en: "Original research / preprint"}
+  release:
+    points: 60
+    label: {tr: Model / Veri Seti, en: Model / Dataset}
+    about: {tr: "Açık model ya da veri seti yayını", en: "Open model or dataset release"}
+  project:
+    points: 40
+    label: {tr: Proje, en: Project}
+    about: {tr: "Projeler sayfasına yeni proje eklemek ya da bir kilometre taşını tamamlamak", en: "Adding a project or finishing a milestone"}
+  translation:
+    points: 30
+    label: {tr: Çeviri, en: Translation}
+    about: {tr: "Bir makale/rehberin tam çevirisi", en: "A full translation of an article/guide"}
+  code:
+    points: 15
+    monthly_cap: 90
+    label: {tr: Kod, en: Code}
+    about: {tr: "Lab depolarında birleştirilen (merged) pull request", en: "Merged pull request in lab repositories"}
+  summary:
+    points: 15
+    monthly_cap: 60
+    label: {tr: Makale Özeti, en: Paper Summary}
+    about: {tr: "Bir makalenin özeti", en: "A paper summary"}
+  docs:
+    points: 8
+    monthly_cap: 40
+    label: {tr: Dokümantasyon, en: Docs}
+    about: {tr: "Wiki sayfası yazma ya da ciddi güncelleme", en: "Writing or substantially updating a wiki page"}
+  review:
+    points: 5
+    monthly_cap: 25
+    label: {tr: İnceleme, en: Review}
+    about: {tr: "Başkasının PR'ını inceleyip geri bildirim vermek", en: "Reviewing someone else's PR"}
+  issue:
+    points: 3
+    monthly_cap: 15
+    label: {tr: Hata Bildirimi, en: Issue}
+    about: {tr: "Kabul edilen hata/öneri bildirimi", en: "An accepted bug report / suggestion"}
